@@ -1,0 +1,38 @@
+.CommonButton {
+  display: block;
+  position: absolute;
+  height: 5rem;
+  min-width: 22rem;
+  border: 0.2rem solid #0081FB;
+  padding: 0;
+  color: #0081FB;
+  background: none;
+  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.4rem;
+  transition: 0.5s;
+}
+
+.CommonButton.disabled {
+  border: 0.2rem solid #7f8aa2;
+  color: #7f8aa2;
+}
+
+.CommonButton:hover,
+.CommonButton:focus {
+  color: #000000;
+  box-shadow: inset 0 0 0 2em #0081FB;
+  cursor: pointer;
+}
+
+.CommonButton:active {
+  box-shadow: inset 0 0 0 2em #0171de;
+  transform: scale(0.95);
+}
+
+.CommonButton.disabled:hover,
+.CommonButton.disabled:focus {
+  color: #7f8aa2;
+  box-shadow: none;
+  cursor: pointer;
+}

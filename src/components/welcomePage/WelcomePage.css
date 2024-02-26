@@ -1,0 +1,19 @@
+.WelcomePage {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  -webkit-min-height: 100svh;
+  -moz-min-height: 100svh;
+}
+
+.WelcomePage .Wrapper {
+  position: relative;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.WelcomePage.AppearanceAnimation .Wrapper h1 {
+  opacity: 1;
+}

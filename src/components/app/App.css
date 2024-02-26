@@ -1,0 +1,37 @@
+.App {
+  background-color: #212121;
+  color: #ffffff;
+  overflow: hidden;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.Shown {
+  animation-name: smoothAppearing;
+}
+
+@media screen and (max-width: 1300px) {
+
+}
+
+@media screen and (max-width: 1100px) {
+
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (max-width: 380px) {
+
+}
+
+@keyframes smoothAppearing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

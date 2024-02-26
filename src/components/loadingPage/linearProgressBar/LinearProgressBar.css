@@ -1,0 +1,27 @@
+.LinearProgressBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Percentage {
+  color: #5273e6;
+  font-size: 46px;
+}
+
+.EmptyProgressBar {
+  background-color: #1D1D1D;
+  border-radius: 100px;
+  height: .5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.FillingProgressBar {
+  background-image: linear-gradient(to right, #0081FB, #F0D818);
+  border-radius: 100px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}

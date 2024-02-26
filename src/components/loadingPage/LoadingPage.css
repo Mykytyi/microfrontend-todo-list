@@ -1,0 +1,87 @@
+.LoadingPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.AppearingAnimation {
+  animation-name: Appearing;
+}
+
+.DisappearingAnimation {
+  animation-name: Disappearing;
+  animation-timing-function: ease-in;
+}
+
+.LoadingPage .MainContent {
+  min-width: 50rem;
+  font-size: 10rem;
+  color: #fffbf7;
+  /*border: 1px solid #ff7e00;*/
+}
+
+.LoadingPage .MainContent .CenteredContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.LoadingPage .MainContent .Text {
+  font-size: 1.5rem;
+  color: #8D8D8D;
+  letter-spacing: 0.3rem;
+}
+
+
+.LoadingPage .MainContent .M_Picture {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes Appearing {
+  0% {
+    /*-webkit-transform: translateX(2000px) scale(.7);*/
+    /*transform: translateX(2000px) scale(.7);*/
+    opacity: 0
+  }
+
+  50% {
+    /*-webkit-transform: translateX(0) scale(.7);*/
+    /*transform: translateX(0) scale(.7);*/
+    opacity: .5
+  }
+
+  100% {
+    /*-webkit-transform: scale(1);*/
+    /*transform: scale(1);*/
+    opacity: 1
+  }
+}
+
+@keyframes Disappearing {
+  0% {
+    /*-webkit-transform: translateX(2000px) scale(.7);*/
+    /*transform: translateX(2000px) scale(.7);*/
+    opacity: 1
+  }
+
+  50% {
+    /*-webkit-transform: translateX(0) scale(.7);*/
+    /*transform: translateX(0) scale(.7);*/
+    opacity: .5
+  }
+
+  100% {
+    /*-webkit-transform: scale(1);*/
+    /*transform: scale(1);*/
+    opacity: 0
+  }
+}
