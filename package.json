@@ -1,6 +1,9 @@
 {
   "name": "microfrontend-todo-list",
   "version": "0.1.0",
+  "engines": {
+    "node": "18.16.0"
+  },
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
