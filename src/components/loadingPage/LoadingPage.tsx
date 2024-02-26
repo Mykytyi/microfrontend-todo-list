@@ -29,7 +29,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ timeForLoadingPage }) => {
       <div className="MainContent">
         <div className="CenteredContainer">
           <img alt="Mykyta" src={logo} className="M_Picture" />
-          <p className="Text">Mykyta is thinking</p>
+          <p className="Text">Loading your task list</p>
         </div>
         <LinearProgressBar percent={percent} animateTiming={100} />
       </div>

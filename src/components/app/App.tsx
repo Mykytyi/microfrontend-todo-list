@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import WelcomePage from '../welcomePage/WelcomePage';
+import Navigation from '../navigation/Navigation';
+import TaskList from '../taskLists/TaskList';
 import InfoPanel from '../common/infoPanel/InfoPanel';
 import LoadingPage from '../loadingPage/LoadingPage';
 import { PRE_LOAD_PAGE_TIME } from '../../constants/constants';
@@ -7,8 +8,15 @@ import { AppContext } from '../../context/app';
 
 import './App.css';
 
+export enum Tabs {
+  TODAY = 'TODAY',
+  ALL = 'ALL',
+  COMPLETED = 'TODAY'
+}
+
 function App() {
   const [isAnimated, setIsAnimated] = useState(true);
+  const [tab, setTab] = useState<keyof typeof Tabs>(Tabs.TODAY);
   const messages = useContext(AppContext).state.messages;
 
   useEffect(() => {
@@ -18,18 +26,18 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isAnimated) {
-    return <LoadingPage timeForLoadingPage={PRE_LOAD_PAGE_TIME} />;
-  }
+  // if (isAnimated) {
+  //   return <LoadingPage timeForLoadingPage={PRE_LOAD_PAGE_TIME} />;
+  // }
 
   return (
-    <div className="App Shown">
+    <div className="App">
       <header>
-        <span/>
+        <Navigation tab={tab} setTab={setTab} />
       </header>
 
       <main>
-        <WelcomePage/>
+        <TaskList />
       </main>
 
       <footer>

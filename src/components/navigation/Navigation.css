@@ -1,0 +1,129 @@
+.NavigationContainer .SearchInputContainer {
+  margin-bottom: 1.6rem;
+}
+
+.NavigationContainer .SearchInputContainer .SearchInput {
+  font-size: 2.4rem;
+}
+
+.NavigationContainer .SearchInputContainer .SearchInput .MuiInputBase-input {
+  font-size: 1.6rem;
+}
+
+.NavigationContainer .SearchInputContainer .SearchInput .MuiSvgIcon-root {
+  font-size: 2.4rem;
+}
+
+.NavigationContainer .SearchInputContainer .SearchInput .MuiOutlinedInput-root fieldset,
+.NavigationContainer .SearchInputContainer .SearchInput .MuiOutlinedInput-root .Mui-focused fieldset,
+.NavigationContainer .SearchInputContainer .SearchInput .MuiOutlinedInput-root:hover fieldset
+{
+  border-color: unset;
+}
+
+.NavigationContainer nav .TabsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  font-size: 1.8rem;
+  /*gap: 1rem;*/
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer {
+  padding: 1rem;
+  background-color: #4b4c4f;
+  border-radius: 1rem;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer .DetailsContainer .IconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-color: #888;
+  border-radius: 50%;
+  font-size: 2.4rem;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.TodayTab .DetailsContainer .IconContainer {
+  background-color: #148dff;
+}
+/* TodayTab active, Chosen */
+.NavigationContainer nav .TabsContainer .TabContainer.TodayTab:active,
+.NavigationContainer nav .TabsContainer .TabContainer.TodayTab.Chosen {
+  background-color: #148dff;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.TodayTab:active .DetailsContainer .IconContainer svg,
+.NavigationContainer nav .TabsContainer .TabContainer.TodayTab.Chosen .DetailsContainer .IconContainer svg {
+  color: #148dff;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.TodayTab:active .DetailsContainer .IconContainer,
+.NavigationContainer nav .TabsContainer .TabContainer.TodayTab.Chosen .DetailsContainer .IconContainer {
+  background-color: #ffffff;
+}
+/* TodayTab active, Chosen end */
+
+.NavigationContainer nav .TabsContainer .TabContainer.TodayTab .DetailsContainer .IconContainer .MuiBadge-badge {
+  font-size: 1rem;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.AllTab .DetailsContainer .IconContainer {
+  background-color: #676767;
+}
+
+/* AllTab active, Chosen */
+.NavigationContainer nav .TabsContainer .TabContainer.AllTab:active,
+.NavigationContainer nav .TabsContainer .TabContainer.AllTab.Chosen {
+  background-color: #676767;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.AllTab:active .DetailsContainer .IconContainer svg,
+.NavigationContainer nav .TabsContainer .TabContainer.AllTab.Chosen .DetailsContainer .IconContainer svg {
+  color: #676767;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.AllTab:active .DetailsContainer .IconContainer,
+.NavigationContainer nav .TabsContainer .TabContainer.AllTab.Chosen .DetailsContainer .IconContainer {
+  background-color: #ffffff;
+}
+/* AllTab active, Chosen end */
+
+.NavigationContainer nav .TabsContainer .TabContainer.Completed .DetailsContainer .IconContainer {
+  background-color: #74878a;
+}
+
+/* Completed active, Chosen */
+.NavigationContainer nav .TabsContainer .TabContainer.Completed:active,
+.NavigationContainer nav .TabsContainer .TabContainer.Completed.Chosen {
+  background-color: #74878a;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.Completed:active .DetailsContainer .IconContainer svg,
+.NavigationContainer nav .TabsContainer .TabContainer.Completed.Chosen .DetailsContainer .IconContainer svg {
+  color: #74878a;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.Completed:active .DetailsContainer .IconContainer,
+.NavigationContainer nav .TabsContainer .TabContainer.Completed.Chosen .DetailsContainer .IconContainer {
+  background-color: #ffffff;
+}
+/* Completed active, Chosen end */
+
+.NavigationContainer nav .TabsContainer .TabContainer .DetailsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer .TabName {
+  font-weight: 600;
+}
+
+.NavigationContainer nav .TabsContainer .TaskCounter {
+  font-weight: bold;
+  font-size: 2.4rem;
+}

@@ -5,10 +5,25 @@
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+  animation-name: smoothAppearing;
 }
 
-.Shown {
-  animation-name: smoothAppearing;
+.App header {
+  margin: 0;
+  padding: 1.5rem;
+  width: 32rem;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  background-color: #2d2e31;
+  border-right: 1px solid #0a0a0a;
+  font-size: 2.4rem;
+  box-sizing: border-box;
+}
+
+.App main {
+  margin-left: 32rem;
+  font-size: 2.4rem;
 }
 
 @media screen and (max-width: 1300px) {
