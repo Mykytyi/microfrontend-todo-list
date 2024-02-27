@@ -1,19 +1,111 @@
-.WelcomePage {
-  /*display: flex;*/
-  /*position: relative;*/
-  /*flex-direction: column;*/
-  /*justify-content: center;*/
-  /*min-height: 100svh;*/
-  /*-webkit-min-height: 100svh;*/
-  /*-moz-min-height: 100svh;*/
+.TaskListContainer {
+  max-width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  scrollbar-color: #9a9a9a #565656;
 }
 
-.WelcomePage .Wrapper {
-  position: relative;
-  padding-left: 10%;
-  padding-right: 10%;
+.TaskListContainer .TitleContainer {
+  display: flex;
+  padding: 1rem 1rem;
+  /*position: sticky;*/
+  top: 0;
+  justify-content: space-between;
+  min-height: 12rem;
+  background-color: #212121;
+  /*border: 1px solid rgba(173, 255, 47, 0.37);*/
 }
 
-.WelcomePage.AppearanceAnimation .Wrapper h1 {
-  opacity: 1;
+.TaskListContainer .TitleContainer .Title {
+  letter-spacing: -0.1rem;
+  font-size: 4rem;
+  font-weight: 700;
+  align-self: flex-end;
+}
+
+.TaskListContainer .TitleContainer .AddTaskButtonContainer {
+  align-self: flex-start;
+}
+
+.TaskListContainer .TitleContainer .AddTaskButtonContainer .MuiSvgIcon-root {
+  font-size: 2.4rem;
+  color: #9a9a9a;
+}
+
+/* AllTab */
+
+.TaskListContainer.AllTab .TitleContainer .Title {
+  color: #676767;
+}
+
+/* Completed */
+
+.TaskListContainer.Completed .TitleContainer .Title {
+  color: #74878a;
+}
+
+/* TodayTab */
+
+.TaskListContainer.TodayTab .TitleContainer .Title {
+  color: #148dff;
+}
+
+/* Uncompleted */
+
+.TaskListContainer.Uncompleted .TitleContainer .Title {
+  color: #ff3232;
+}
+
+
+.TaskListContainer .TaskList {
+  height: calc(100% - 14rem); /* .TaskListContainer .TitleContainer (paddings 2rem) + (height 12rem) */
+  overflow: scroll;
+}
+
+.TaskListContainer .TaskList .Header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1rem;
+  border-bottom: 1px solid #525252;
+}
+
+.TaskListContainer .TaskList .Header p {
+  display: flex;
+  align-items: center;
+  color: #9a9a9a;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.TaskListContainer .TaskList .Header .ButtonsContainer {
+}
+
+.TaskListContainer .TaskList .Header .ButtonsContainer .MuiButtonBase-root {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+/* AllTab */
+
+.TaskListContainer.AllTab .TaskList .Header .ButtonsContainer .MuiButtonBase-root {
+  color: #676767;
+}
+
+/* Completed */
+
+.TaskListContainer.Completed .TaskList .Header .ButtonsContainer .MuiButtonBase-root {
+  color: #74878a;
+}
+
+/* TodayTab */
+
+.TaskListContainer.TodayTab .TaskList .Header .ButtonsContainer .MuiButtonBase-root {
+  color: #148dff;
+}
+
+/* Uncompleted */
+
+.TaskListContainer.Uncompleted .TaskList .Header .ButtonsContainer .MuiButtonBase-root {
+  color: #ff3232;
 }

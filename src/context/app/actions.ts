@@ -1,4 +1,3 @@
-
 export type Message = {
   type: 'error' | 'success' | 'info',
   message: string,
@@ -13,7 +12,17 @@ type RemoveMessage = {
   type: 'REMOVE_MESSAGE',
 }
 
-export type AppActions = AddMessage | RemoveMessage;
+type LoadTasks = {
+  type: 'LOAD_TASKS',
+}
+
+export type AppActions = AddMessage | RemoveMessage | LoadTasks;
+
+export const loadTasks = (): LoadTasks => {
+  return {
+    type: 'LOAD_TASKS',
+  }
+};
 
 export const addMessage = (message: Message): AddMessage => {
   return {

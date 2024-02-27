@@ -1,3 +1,6 @@
+
+export const LOCAL_STORAGE_ID = 'LOCAL_STORAGE_FOR_TODO_LIST-abcdef012345';
+
 export const INFORMATION_TIME = 3000;
 
 export const PRE_LOAD_PAGE_TIME = 4000;

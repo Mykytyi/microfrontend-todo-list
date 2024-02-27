@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import Navigation from '../navigation/Navigation';
 import TaskList from '../taskLists/TaskList';
 import InfoPanel from '../common/infoPanel/InfoPanel';
-import LoadingPage from '../loadingPage/LoadingPage';
 import { PRE_LOAD_PAGE_TIME } from '../../constants/constants';
+import { loadTasks } from '../../context/app/actions';
 import { AppContext } from '../../context/app';
 
 import './App.css';
@@ -16,20 +16,18 @@ export enum Tabs {
 }
 
 function App() {
+  const { dispatch } = useContext(AppContext);
   const [isAnimated, setIsAnimated] = useState(true);
   const [tab, setTab] = useState<keyof typeof Tabs>(Tabs.TODAY);
   const messages = useContext(AppContext).state.messages;
 
   useEffect(() => {
+    dispatch(loadTasks());
     const timer = setTimeout(() => {
       setIsAnimated(false);
     }, PRE_LOAD_PAGE_TIME);
     return () => clearTimeout(timer);
   }, []);
-
-  // if (isAnimated) {
-  //   return <LoadingPage timeForLoadingPage={PRE_LOAD_PAGE_TIME} />;
-  // }
 
   return (
     <div className="App">
@@ -38,7 +36,7 @@ function App() {
       </header>
 
       <main>
-        <TaskList />
+        <TaskList tab={tab}/>
       </main>
 
       <footer>
