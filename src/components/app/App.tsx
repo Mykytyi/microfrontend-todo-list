@@ -11,7 +11,8 @@ import './App.css';
 export enum Tabs {
   TODAY = 'TODAY',
   ALL = 'ALL',
-  COMPLETED = 'TODAY'
+  COMPLETED = 'COMPLETED',
+  UNCOMPLETED = 'UNCOMPLETED'
 }
 
 function App() {

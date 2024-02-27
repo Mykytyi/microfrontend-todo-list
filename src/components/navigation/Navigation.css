@@ -26,13 +26,17 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   font-size: 1.8rem;
-  /*gap: 1rem;*/
 }
 
 .NavigationContainer nav .TabsContainer .TabContainer {
   padding: 1rem;
   background-color: #4b4c4f;
   border-radius: 1rem;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer:hover {
+  cursor: pointer;
+  user-select: none;
 }
 
 .NavigationContainer nav .TabsContainer .TabContainer .DetailsContainer .IconContainer {
@@ -111,6 +115,27 @@
   background-color: #ffffff;
 }
 /* Completed active, Chosen end */
+
+.NavigationContainer nav .TabsContainer .TabContainer.Uncompleted .DetailsContainer .IconContainer {
+  background-color: #ff3232;
+}
+
+/* UNCOMPLETED active, Chosen */
+.NavigationContainer nav .TabsContainer .TabContainer.Uncompleted:active,
+.NavigationContainer nav .TabsContainer .TabContainer.Uncompleted.Chosen {
+  background-color: #ff3232;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.Uncompleted:active .DetailsContainer .IconContainer svg,
+.NavigationContainer nav .TabsContainer .TabContainer.Uncompleted.Chosen .DetailsContainer .IconContainer svg {
+  color: #ff3232;
+}
+
+.NavigationContainer nav .TabsContainer .TabContainer.Uncompleted:active .DetailsContainer .IconContainer,
+.NavigationContainer nav .TabsContainer .TabContainer.Uncompleted.Chosen .DetailsContainer .IconContainer {
+  background-color: #ffffff;
+}
+/* UNCOMPLETED active, Chosen end */
 
 .NavigationContainer nav .TabsContainer .TabContainer .DetailsContainer {
   display: flex;

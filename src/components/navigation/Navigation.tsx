@@ -74,6 +74,17 @@ const Navigation = ({ tab, setTab }: Props) => {
             </div>
             <p className="TabName">Completed</p>
           </li>
+
+          <li className={`TabContainer Uncompleted ${tab === 'UNCOMPLETED' && 'Chosen'}`} onClick={() => setTab('UNCOMPLETED')}>
+            <div className="DetailsContainer">
+              <span className="IconContainer">
+                <DoneIcon fontSize="inherit"/>
+              </span>
+
+              <span className="TaskCounter">4</span>
+            </div>
+            <p className="TabName">Uncompleted</p>
+          </li>
         </ul>
       </nav>
     </div>
