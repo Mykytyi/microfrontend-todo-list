@@ -1,10 +1,5 @@
 import * as React from 'react';
-import {
-  List,
-  ListItem,
-  Radio,
-  TextareaAutosize,
-} from '@mui/material';
+import { List } from '@mui/material';
 import ListItemComponent from '../listItem/ListItemComponent';
 import { sortTasksByDate, sortTasksByDateAndCompletion } from '../../../helpers/sortTasks';
 
