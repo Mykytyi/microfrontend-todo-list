@@ -47,7 +47,6 @@ const ListItemComponent = ({ task }: Props) => {
       alignItems="flex-start"
       className="ListItem"
       sx={{ padding: '0.5rem 0' }}
-      autoFocus={!task.updatedAt}
     >
       <Radio
         checked={checked}
@@ -64,7 +63,7 @@ const ListItemComponent = ({ task }: Props) => {
           onBlur={handleUpdateTask}
           style={{ width: '100%' }}
           spellCheck={false}
-          autoFocus={!task.updatedAt}
+          autoFocus={!task.task}
         />
         <div className="ExtraFuncContainer">
           <IconButton aria-label="delete" size="small" className="IconContainer" onClick={handleRemoveTask}>
