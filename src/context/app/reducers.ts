@@ -1,10 +1,11 @@
-import type { AppActions, Message } from './actions';
+import { v4 } from 'uuid';
 import { Task } from '../../type-definitions';
 import { LOCAL_STORAGE_ID } from '../../constants/constants';
 import { tabTasksHandler } from '../../helpers/tabNumbers';
 
+import type { AppActions } from './actions';
+
 export type InitialAppState = {
-  messages: Array<Message>,
   tasks: Array<Partial<Task>>,
   todayTasks: number,
   allTasks: number,
@@ -13,7 +14,6 @@ export type InitialAppState = {
 }
 
 export const initialAppState: InitialAppState = {
-  messages: [],
   tasks: [],
   todayTasks: 0,
   allTasks: 0,
@@ -23,21 +23,27 @@ export const initialAppState: InitialAppState = {
 
 export function appReducer(state: typeof initialAppState, action: AppActions) {
   switch (action.type) {
-    case "ADD_MESSAGE":
+    case "ADD_TASK":
+      const newTasks = [...state.tasks];
+      newTasks.push({
+        id: v4(),
+        task: '',
+        completed: false,
+        createdAt: new Date(),
+      });
+
+      localStorage.setItem(LOCAL_STORAGE_ID, JSON.stringify(newTasks));
+
       return {
         ...state,
-        messages: [...state.messages, action.message],
+        tasks: newTasks,
+        todayTasks: state.todayTasks + 1,
+        uncompletedTasks: state.uncompletedTasks + 1,
+        allTasks: state.allTasks + 1,
       }
-    case "REMOVE_MESSAGE":
-      const newArray = [...state.messages];
-      newArray.pop();
-      return {
-      ...state,
-      messages: [...newArray],
-    }
     case "LOAD_TASKS":
       const dataFromStorage = localStorage.getItem(LOCAL_STORAGE_ID);
-      let parsedData;
+      let parsedData = [];
 
       try {
         if (dataFromStorage) {

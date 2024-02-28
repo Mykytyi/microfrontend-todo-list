@@ -2,46 +2,64 @@ import * as React from 'react';
 import {
   List,
   ListItem,
-  ListItemAvatar,
-  Avatar,
-  ListItemText,
-  Typography,
-  Divider,
   Radio,
-  InputAdornment,
-  TextField,
   TextareaAutosize,
 } from '@mui/material';
-import { v4 } from 'uuid';
+import ListItemComponent from '../listItem/ListItemComponent';
+import { sortTasksByDate, sortTasksByDateAndCompletion } from '../../../helpers/sortTasks';
 
+import { Tabs } from '../../app/App';
 import { Task } from '../../../type-definitions';
 
 import './List.css';
 
 type Props = {
   data: Array<Partial<Task>>;
+  tab: keyof typeof Tabs;
 }
-console.log('ID: ', v4());
 
-const ListComponent = ({ data }: Props) => {
+const ListComponent = ({ data, tab }: Props) => {
+  let parsedData = data;
+
+  if (tab === 'TODAY') {
+    parsedData = data
+      .filter((task) => {
+        if (task?.createdAt) {
+          return !task?.completed && new Date(task?.createdAt).getDate() === new Date().getDate();
+        }
+        return false;
+      })
+      .sort(sortTasksByDate);
+  }
+
+  if (tab === 'COMPLETED') {
+    parsedData = data
+      .filter((task) => {
+        return task?.completed;
+      })
+      .sort(sortTasksByDate);
+  }
+
+  if (tab === 'UNCOMPLETED') {
+    parsedData = data
+      .filter((task) => {
+        return !task?.completed;
+      })
+      .sort(sortTasksByDate);
+  }
+
+  if (tab === 'ALL') {
+    parsedData = data
+      .sort(sortTasksByDateAndCompletion);
+  }
+
   return (
     <List className="ListContainer" sx={{ padding: 0 }}>
-      <ListItem alignItems="flex-start" className="ListItem" sx={{ padding: '0.5rem 0' }}>
-        <Radio
-          checked={true}
-          onChange={() => null}
-        />
-        <div className="TextAreaContainer">
-          <TextareaAutosize
-            id="input-without-icon"
-            placeholder="New task"
-            className="InputField"
-            //onChange={(value) => console.log(JSON.stringify(value.target.value))}
-            style={{ width: '100%' }}
-            spellCheck={false}
-          />
-        </div>
-      </ListItem>
+      {!!parsedData.length && parsedData.map((item) => {
+        return (
+          <ListItemComponent task={item} key={item.id}/>
+        );
+      })}
     </List>
   );
 }

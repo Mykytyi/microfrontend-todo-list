@@ -1,22 +1,12 @@
-export type Message = {
-  type: 'error' | 'success' | 'info',
-  message: string,
-}
-
-type AddMessage = {
-  type: 'ADD_MESSAGE',
-  message: Message,
-}
-
-type RemoveMessage = {
-  type: 'REMOVE_MESSAGE',
-}
-
 type LoadTasks = {
   type: 'LOAD_TASKS',
 }
 
-export type AppActions = AddMessage | RemoveMessage | LoadTasks;
+type AddTask = {
+  type: 'ADD_TASK',
+}
+
+export type AppActions = LoadTasks | AddTask;
 
 export const loadTasks = (): LoadTasks => {
   return {
@@ -24,16 +14,9 @@ export const loadTasks = (): LoadTasks => {
   }
 };
 
-export const addMessage = (message: Message): AddMessage => {
+export const addTask = (): AddTask => {
   return {
-    type: 'ADD_MESSAGE',
-    message,
-  }
-};
-
-export const removeMessage = (): RemoveMessage => {
-  return {
-    type: 'REMOVE_MESSAGE',
+    type: 'ADD_TASK',
   }
 };
 

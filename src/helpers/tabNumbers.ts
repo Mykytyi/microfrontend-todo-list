@@ -21,7 +21,7 @@ export const tabTasksHandler = (tasks: Array<Partial<Task>> | undefined): TabTas
       uncompletedTasks += 1;
     }
 
-    if (element.createdAt && new Date(element.createdAt).getDate() === today) {
+    if (element.createdAt && !element?.completed && new Date(element.createdAt).getDate() === today) {
       todayTasks += 1;
     }
   });

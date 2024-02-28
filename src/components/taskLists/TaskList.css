@@ -65,6 +65,7 @@
 .TaskListContainer .TaskList .Header {
   display: flex;
   justify-content: space-between;
+  min-height: 4.4rem;
   margin-left: 1rem;
   border-bottom: 1px solid #525252;
 }
@@ -78,6 +79,8 @@
 }
 
 .TaskListContainer .TaskList .Header .ButtonsContainer {
+  display: flex;
+  align-items: center;
 }
 
 .TaskListContainer .TaskList .Header .ButtonsContainer .MuiButtonBase-root {

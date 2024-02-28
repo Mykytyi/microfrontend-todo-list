@@ -1,11 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {
-  TextField,
-  InputAdornment,
   Badge,
   Button,
 } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DoneIcon from '@mui/icons-material/Done';
@@ -42,24 +39,6 @@ const Navigation = ({ tab, setTab }: Props) => {
   return (
     <div className="NavigationContainer">
       <div className="Wrapper">
-        <div className="SearchInputContainer">
-          <TextField
-            id="input-with-icon-textfield"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-            }}
-            variant="outlined"
-            placeholder="Search"
-            fullWidth
-            className="SearchInput"
-            size="small"
-          />
-        </div>
-
         <nav>
           <ul className="TabsContainer">
             <li className={`TabContainer TodayTab ${tab === 'TODAY' && 'Chosen'}`} onClick={() => setTab('TODAY')}>
