@@ -30,9 +30,9 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // if (isAnimated) {
-  //   return <LoadingPage timeForLoadingPage={PRE_LOAD_PAGE_TIME} />;
-  // }
+  if (isAnimated) {
+    return <LoadingPage timeForLoadingPage={PRE_LOAD_PAGE_TIME} />;
+  }
 
   return (
     <div className="App">
