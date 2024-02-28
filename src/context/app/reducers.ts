@@ -23,7 +23,7 @@ export const initialAppState: InitialAppState = {
 
 export function appReducer(state: typeof initialAppState, action: AppActions) {
   switch (action.type) {
-    case "ADD_TASK":
+    case "ADD_TASK": {
       const newTasks = [...state.tasks];
       newTasks.push({
         id: v4(),
@@ -37,11 +37,9 @@ export function appReducer(state: typeof initialAppState, action: AppActions) {
       return {
         ...state,
         tasks: newTasks,
-        todayTasks: state.todayTasks + 1,
-        uncompletedTasks: state.uncompletedTasks + 1,
-        allTasks: state.allTasks + 1,
       }
-    case "LOAD_TASKS":
+    }
+    case "LOAD_TASKS": {
       const dataFromStorage = localStorage.getItem(LOCAL_STORAGE_ID);
       let parsedData = [];
 
@@ -56,21 +54,83 @@ export function appReducer(state: typeof initialAppState, action: AppActions) {
         }
       }
 
+      return {
+        ...state,
+        tasks: parsedData,
+      };
+    }
+    case "UPDATE_STATUS": {
+      const newTasks = state.tasks.map((item) => {
+        if (item.id === action.id) {
+          if (!item.completed) {
+            return {
+              ...item,
+              completed: !item.completed,
+              updatedAt: new Date(),
+              completedAt: new Date(),
+            }
+          }
+          return {
+            ...item,
+            completed: !item.completed,
+            updatedAt: new Date(),
+            completedAt: '',
+          }
+        }
+        return item;
+      });
+
+      localStorage.setItem(LOCAL_STORAGE_ID, JSON.stringify(newTasks));
+
+      return {
+        ...state,
+        tasks: newTasks,
+      }
+    }
+    case "UPDATE_TASK": {
+      const newTasks = state.tasks.map((item) => {
+        if (item.id === action.id) {
+          return {
+            ...item,
+            task: action.task,
+          }
+        }
+        return item;
+      });
+
+      localStorage.setItem(LOCAL_STORAGE_ID, JSON.stringify(newTasks));
+
+      return {
+        ...state,
+        tasks: newTasks
+      }
+    }
+    case "REMOVE_TASK": {
+      const newTasks = state.tasks.filter((item) => item.id !== action.id);
+
+      localStorage.setItem(LOCAL_STORAGE_ID, JSON.stringify(newTasks));
+
+      return {
+        ...state,
+        tasks: newTasks,
+      }
+    }
+    case 'UPDATE_TABS_NUMBERS': {
       const {
         todayTasks,
         uncompletedTasks,
         completedTasks,
         allTasks,
-      } = tabTasksHandler(parsedData)
+      } = tabTasksHandler(state.tasks);
 
       return {
         ...state,
-        tasks: parsedData,
         todayTasks,
         uncompletedTasks,
         completedTasks,
-        allTasks
-      };
+        allTasks,
+      }
+    }
     default:
       return initialAppState;
   }

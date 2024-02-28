@@ -60,6 +60,7 @@
 .TaskListContainer .TaskList {
   height: calc(100% - 14rem); /* .TaskListContainer .TitleContainer (paddings 2rem) + (height 12rem) */
   overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 .TaskListContainer .TaskList .Header {

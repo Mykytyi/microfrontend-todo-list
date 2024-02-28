@@ -10,7 +10,7 @@ import mockData from '../../mockData/mockData.json';
 import { Tabs } from '../app/App';
 import { LOCAL_STORAGE_ID } from '../../constants/constants';
 import { AppContext } from '../../context/app';
-import { loadTasks } from '../../context/app/actions';
+import { loadTasks, updateTabsNumbers } from '../../context/app/actions';
 
 import './Navigation.css'
 
@@ -33,6 +33,7 @@ const Navigation = ({ tab, setTab }: Props) => {
   const addMockDataHandler = () => {
     localStorage.setItem(LOCAL_STORAGE_ID, JSON.stringify(mockData));
     dispatch(loadTasks());
+    dispatch(updateTabsNumbers());
     setIsAddMockDataBlocked(true);
   }
 

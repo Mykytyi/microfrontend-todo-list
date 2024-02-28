@@ -1,13 +1,13 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {Button, IconButton} from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
+import { Button, IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import List from './list/List';
-import { addTask } from '../../context/app/actions';
+import { addTask, updateTabsNumbers } from '../../context/app/actions';
+import { AppContext } from '../../context/app';
 
 import './TaskList.css';
 
 import {Tabs} from '../app/App';
-import {AppContext} from '../../context/app';
 
 type Props = {
   tab: keyof typeof Tabs;
@@ -53,6 +53,7 @@ const TaskList = ({ tab }: Props) => {
 
   const handleAddTask = () => {
     dispatch(addTask());
+    dispatch(updateTabsNumbers());
   }
 
   return (
@@ -72,11 +73,12 @@ const TaskList = ({ tab }: Props) => {
           <div className="Header">
             <p>{completedTasks} Completed</p>
 
-            {(tab !== 'COMPLETED') && (
-              <div className="ButtonsContainer">
-                <Button variant="text" size="large" color="inherit">Show</Button>
-              </div>
-            )}
+            {/*TODO remove*/}
+            {/*{(tab !== 'COMPLETED') && (*/}
+            {/*  <div className="ButtonsContainer">*/}
+            {/*    <Button variant="text" size="large" color="inherit">Show</Button>*/}
+            {/*  </div>*/}
+            {/*)}*/}
           </div>
         )}
 

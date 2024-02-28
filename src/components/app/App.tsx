@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import Navigation from '../navigation/Navigation';
 import TaskList from '../taskLists/TaskList';
+import LoadingPage from '../loadingPage/LoadingPage';
 import { PRE_LOAD_PAGE_TIME } from '../../constants/constants';
-import { loadTasks } from '../../context/app/actions';
+import { loadTasks, updateTabsNumbers } from '../../context/app/actions';
 import { AppContext } from '../../context/app';
 
 import './App.css';
@@ -21,11 +22,16 @@ function App() {
 
   useEffect(() => {
     dispatch(loadTasks());
+    dispatch(updateTabsNumbers());
     const timer = setTimeout(() => {
       setIsAnimated(false);
     }, PRE_LOAD_PAGE_TIME);
     return () => clearTimeout(timer);
   }, []);
+
+  // if (isAnimated) {
+  //   return <LoadingPage timeForLoadingPage={PRE_LOAD_PAGE_TIME} />;
+  // }
 
   return (
     <div className="App">
