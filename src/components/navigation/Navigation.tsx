@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Badge,
   Button,
@@ -9,8 +9,8 @@ import DoneIcon from '@mui/icons-material/Done';
 import mockData from '../../mockData/mockData.json';
 import { Tabs } from '../app/App';
 import { LOCAL_STORAGE_ID } from '../../constants/constants';
-import { AppContext } from '../../context/app';
 import { loadTasks, updateTabsNumbers } from '../../context/app/actions';
+import { useAppDispatch, useCustomState } from '../../customHooks';
 
 import './Navigation.css'
 
@@ -21,8 +21,8 @@ type Props = {
 }
 
 const Navigation = ({ tab, setTab, setShowHeader }: Props) => {
-  const { dispatch } = useContext(AppContext);
-  const { todayTasks, completedTasks, allTasks, uncompletedTasks } = useContext(AppContext).state;
+  const dispatch = useAppDispatch();
+  const { todayTasks, completedTasks, allTasks, uncompletedTasks } = useCustomState();
   const [isAddMockDataBlocked, setIsAddMockDataBlocked] = useState(false);
 
   useEffect(() => {

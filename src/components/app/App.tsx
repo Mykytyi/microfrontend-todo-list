@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navigation from '../navigation/Navigation';
 import TaskList from '../taskLists/TaskList';
 import LoadingPage from '../loadingPage/LoadingPage';
 import { PRE_LOAD_PAGE_TIME } from '../../constants/constants';
 import { loadTasks, updateTabsNumbers } from '../../context/app/actions';
-import { AppContext } from '../../context/app';
+import { useAppDispatch } from '../../customHooks';
 
 import './App.css';
 
@@ -16,7 +16,7 @@ export enum Tabs {
 }
 
 function App() {
-  const { dispatch } = useContext(AppContext);
+  const dispatch = useAppDispatch()
   const [isAnimated, setIsAnimated] = useState(true);
   const [showHeader, setShowHeader] = useState(true);
   const [tab, setTab] = useState<keyof typeof Tabs>(Tabs.TODAY);
@@ -43,10 +43,6 @@ function App() {
       <main>
         <TaskList tab={tab} showHeader={showHeader} setShowHeader={setShowHeader} />
       </main>
-
-      <footer>
-        <span/>
-      </footer>
     </div>
   );
 }

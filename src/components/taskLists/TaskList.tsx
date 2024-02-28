@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import List from './list/List';
 import { addTask, updateTabsNumbers } from '../../context/app/actions';
-import { AppContext } from '../../context/app';
+import { useCustomState, useAppDispatch } from '../../customHooks';
 
 import './TaskList.css';
 
@@ -17,9 +17,8 @@ type Props = {
 }
 
 const TaskList = ({ tab, setShowHeader, showHeader }: Props) => {
-  const { dispatch } = useContext(AppContext);
-  const data = useContext(AppContext).state.tasks;
-  const completedTasks = useContext(AppContext).state.completedTasks;
+  const dispatch  = useAppDispatch();
+  const { tasks: data, completedTasks} = useCustomState();
   const [isHeaderShown, setIsHeaderShown] = useState(false);
 
   useEffect(() => {
