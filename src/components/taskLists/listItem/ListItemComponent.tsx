@@ -1,9 +1,9 @@
-import React, {useCallback, useContext, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {IconButton, ListItem, Radio, TextareaAutosize} from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import { Task } from '../../../type-definitions';
 import { updateStatus, updateTabsNumbers, updateTask, removeTask } from '../../../context/app/actions';
-import { AppContext } from '../../../context/app';
+import { useAppDispatch } from '../../../customHooks';
 
 import './ListItemComponent.css';
 
@@ -12,7 +12,7 @@ type Props = {
 }
 
 const ListItemComponent = ({ task }: Props) => {
-  const { dispatch } = useContext(AppContext);
+  const dispatch = useAppDispatch();
   const [checked, setChecked] = useState(task.completed || false);
   const [input, setInput] = useState(task.task || '');
 
