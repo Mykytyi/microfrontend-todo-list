@@ -40,7 +40,9 @@ const Navigation = ({ tab, setTab, setShowHeader }: Props) => {
 
   const handleTabClick = (tab: keyof typeof Tabs) => {
     setTab(tab);
-    setShowHeader(false);
+    if (window.innerWidth <= 600) {
+      setShowHeader(false);
+    }
   }
 
   return (
