@@ -62,7 +62,6 @@ const ListItemComponent = ({ task }: Props) => {
           onChange={(element) => setInput(element.target.value)}
           onBlur={handleUpdateTask}
           style={{ width: '100%' }}
-          spellCheck={false}
           autoFocus={!task.task}
         />
         <div className="ExtraFuncContainer">

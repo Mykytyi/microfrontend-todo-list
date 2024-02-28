@@ -1,19 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, IconButton } from '@mui/material';
+import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+import ArrowBack from '@mui/icons-material/ArrowBack';
 import List from './list/List';
 import { addTask, updateTabsNumbers } from '../../context/app/actions';
 import { AppContext } from '../../context/app';
 
 import './TaskList.css';
 
-import {Tabs} from '../app/App';
+import { Tabs } from '../app/App';
 
 type Props = {
   tab: keyof typeof Tabs;
+  setShowHeader: React.Dispatch<React.SetStateAction<boolean>>;
+  showHeader: boolean;
 }
 
-const TaskList = ({ tab }: Props) => {
+const TaskList = ({ tab, setShowHeader, showHeader }: Props) => {
   const { dispatch } = useContext(AppContext);
   const data = useContext(AppContext).state.tasks;
   const completedTasks = useContext(AppContext).state.completedTasks;
@@ -59,7 +62,13 @@ const TaskList = ({ tab }: Props) => {
   return (
     <div className={containerClass.join(' ')}>
       <div className="TitleContainer">
-        <h2 className="Title">{title}</h2>
+        <div className="Wrapper">
+          <IconButton aria-label="delete" size="medium" className={`${showHeader && "Rotated"}`} onClick={() => setShowHeader(!showHeader)}>
+            <ArrowBack fontSize="large"/>
+          </IconButton>
+
+          <h2 className="Title">{title}</h2>
+        </div>
 
         <div className="AddTaskButtonContainer">
           <IconButton aria-label="delete" size="medium" onClick={handleAddTask}>
@@ -72,13 +81,6 @@ const TaskList = ({ tab }: Props) => {
         {isHeaderShown && (
           <div className="Header">
             <p>{completedTasks} Completed</p>
-
-            {/*TODO remove*/}
-            {/*{(tab !== 'COMPLETED') && (*/}
-            {/*  <div className="ButtonsContainer">*/}
-            {/*    <Button variant="text" size="large" color="inherit">Show</Button>*/}
-            {/*  </div>*/}
-            {/*)}*/}
           </div>
         )}
 

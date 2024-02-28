@@ -17,9 +17,10 @@ import './Navigation.css'
 type Props = {
   tab: keyof typeof Tabs,
   setTab: (value: keyof typeof Tabs) => void,
+  setShowHeader: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navigation = ({ tab, setTab }: Props) => {
+const Navigation = ({ tab, setTab, setShowHeader }: Props) => {
   const { dispatch } = useContext(AppContext);
   const { todayTasks, completedTasks, allTasks, uncompletedTasks } = useContext(AppContext).state;
   const [isAddMockDataBlocked, setIsAddMockDataBlocked] = useState(false);
@@ -37,12 +38,17 @@ const Navigation = ({ tab, setTab }: Props) => {
     setIsAddMockDataBlocked(true);
   }
 
+  const handleTabClick = (tab: keyof typeof Tabs) => {
+    setTab(tab);
+    setShowHeader(false);
+  }
+
   return (
     <div className="NavigationContainer">
       <div className="Wrapper">
         <nav>
           <ul className="TabsContainer">
-            <li className={`TabContainer TodayTab ${tab === 'TODAY' && 'Chosen'}`} onClick={() => setTab('TODAY')}>
+            <li className={`TabContainer TodayTab ${tab === 'TODAY' && 'Chosen'}`} onClick={() => handleTabClick('TODAY')}>
               <div className="DetailsContainer">
               <span className="IconContainer">
                 <Badge badgeContent={new Date().getDate()} color="info">
@@ -55,7 +61,7 @@ const Navigation = ({ tab, setTab }: Props) => {
               <p className="TabName">Today</p>
             </li>
 
-            <li className={`TabContainer AllTab ${tab === 'ALL' && 'Chosen'}`}  onClick={() => setTab('ALL')}>
+            <li className={`TabContainer AllTab ${tab === 'ALL' && 'Chosen'}`}  onClick={() => handleTabClick('ALL')}>
               <div className="DetailsContainer">
               <span className="IconContainer">
                 <InboxIcon fontSize="inherit"/>
@@ -66,7 +72,7 @@ const Navigation = ({ tab, setTab }: Props) => {
               <p className="TabName">All</p>
             </li>
 
-            <li className={`TabContainer Completed ${tab === 'COMPLETED' && 'Chosen'}`} onClick={() => setTab('COMPLETED')}>
+            <li className={`TabContainer Completed ${tab === 'COMPLETED' && 'Chosen'}`} onClick={() => handleTabClick('COMPLETED')}>
               <div className="DetailsContainer">
               <span className="IconContainer">
                 <DoneIcon fontSize="inherit"/>
@@ -77,7 +83,7 @@ const Navigation = ({ tab, setTab }: Props) => {
               <p className="TabName">Completed</p>
             </li>
 
-            <li className={`TabContainer Uncompleted ${tab === 'UNCOMPLETED' && 'Chosen'}`} onClick={() => setTab('UNCOMPLETED')}>
+            <li className={`TabContainer Uncompleted ${tab === 'UNCOMPLETED' && 'Chosen'}`} onClick={() => handleTabClick('UNCOMPLETED')}>
               <div className="DetailsContainer">
               <span className="IconContainer">
                 <DoneIcon fontSize="inherit"/>

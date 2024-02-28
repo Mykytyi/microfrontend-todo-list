@@ -18,6 +18,7 @@ export enum Tabs {
 function App() {
   const { dispatch } = useContext(AppContext);
   const [isAnimated, setIsAnimated] = useState(true);
+  const [showHeader, setShowHeader] = useState(true);
   const [tab, setTab] = useState<keyof typeof Tabs>(Tabs.TODAY);
 
   useEffect(() => {
@@ -35,12 +36,12 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <Navigation tab={tab} setTab={setTab} />
+      <header className={`${showHeader && 'Shown'}`}>
+        <Navigation tab={tab} setTab={setTab} setShowHeader={setShowHeader}/>
       </header>
 
       <main>
-        <TaskList tab={tab}/>
+        <TaskList tab={tab} showHeader={showHeader} setShowHeader={setShowHeader} />
       </main>
 
       <footer>
