@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import ArrowBack from '@mui/icons-material/ArrowBack';
+import ArrowForward from '@mui/icons-material/ArrowForward';
 import List from './list/List';
 import { addTask, updateTabsNumbers } from '../../context/app/actions';
 import { AppContext } from '../../context/app';
@@ -64,7 +64,7 @@ const TaskList = ({ tab, setShowHeader, showHeader }: Props) => {
       <div className="TitleContainer">
         <div className="Wrapper">
           <IconButton aria-label="delete" size="medium" className={`${showHeader && "Rotated"}`} onClick={() => setShowHeader(!showHeader)}>
-            <ArrowBack fontSize="large"/>
+            <ArrowForward fontSize="large"/>
           </IconButton>
 
           <h2 className="Title">{title}</h2>

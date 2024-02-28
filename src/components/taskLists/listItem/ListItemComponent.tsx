@@ -46,12 +46,13 @@ const ListItemComponent = ({ task }: Props) => {
     <ListItem
       alignItems="flex-start"
       className="ListItem"
-      sx={{ padding: '0.5rem 0' }}
+      sx={{ padding: '0' }}
     >
       <Radio
         checked={checked}
         onClick={handleUpdateStatus}
         disabled={!task.id}
+        sx={{ marginTop: '0.5rem' }}
       />
       <div className="TextAreaContainer">
         <TextareaAutosize
@@ -60,6 +61,7 @@ const ListItemComponent = ({ task }: Props) => {
           className="InputField"
           value={input}
           onChange={(element) => setInput(element.target.value)}
+          spellCheck={false}
           onBlur={handleUpdateTask}
           style={{ width: '100%' }}
           autoFocus={!task.task}

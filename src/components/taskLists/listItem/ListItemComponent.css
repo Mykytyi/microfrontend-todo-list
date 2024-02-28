@@ -6,12 +6,14 @@
   opacity: 0;
 }
 
-.ListItem:hover .TextAreaContainer .ExtraFuncContainer,
-.ListItem:active .TextAreaContainer .ExtraFuncContainer {
+.ListItem:hover .TextAreaContainer .ExtraFuncContainer {
   opacity: 1;
 }
 
-.ListItem:hover .TextAreaContainer .ExtraFuncContainer .IconContainer,
-.ListItem:active .TextAreaContainer .ExtraFuncContainer .IconContainer {
+.ListItem:hover .TextAreaContainer .ExtraFuncContainer .IconContainer {
+  color: #ff3232;
+}
+
+.ListItem:hover .TextAreaContainer .ExtraFuncContainer .IconContainer {
   color: #ff3232;
 }
