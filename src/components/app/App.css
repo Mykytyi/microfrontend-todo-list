@@ -1,14 +1,35 @@
 .App {
+  display: flex;
   background-color: #212121;
   color: #ffffff;
   overflow: hidden;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+  animation-name: smoothAppearing;
 }
 
-.Shown {
-  animation-name: smoothAppearing;
+.App header {
+  margin: 0 0 0 -34rem;
+  padding: 2rem;
+  min-width: 34rem;
+  height: 100svh;
+  background-color: #2d2e31;
+  border-right: 1px solid #0a0a0a;
+  font-size: 2.4rem;
+  box-sizing: border-box;
+  transition: margin-left;
+  transition-timing-function: ease-in-out;
+  transition-duration: .5s;
+}
+
+.App header.Shown {
+  margin-left: 0;
+}
+
+.App main {
+  width: 100%;
+  font-size: 2.4rem;
 }
 
 @media screen and (max-width: 1300px) {
@@ -20,7 +41,11 @@
 }
 
 @media screen and (max-width: 600px) {
-
+  .App header {
+    min-width: 100vw;
+    margin: 0 0 0 -100vw;
+    border-right: none;
+  }
 }
 
 @media screen and (max-width: 380px) {

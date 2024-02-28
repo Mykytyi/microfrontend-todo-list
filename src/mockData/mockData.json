@@ -1,0 +1,115 @@
+[
+  {
+    "id": "abc12345-6789-0123-4567-abcdef012345",
+    "task": "Complete project proposal\nCheck the docs https://mykytacherevatyi.com",
+    "completed": false,
+    "createdAt": "2024-02-27T14:45:21.123",
+    "updatedAt": "2024-02-27T14:45:21.123"
+  },
+  {
+    "id": "def56789-0123-4567-89ab-cdef01234567",
+    "task": "Schedule team meeting",
+    "completed": true,
+    "createdAt": "2024-02-27T15:30:45.987",
+    "completedAt": "2024-02-27T15:30:45.987"
+  },
+  {
+    "id": "ghi23456-7890-1234-5678-ghij78901234",
+    "task": "Read two chapters of the book\nRepeat previous",
+    "completed": false,
+    "createdAt": "2024-02-27T16:15:12.345",
+    "updatedAt": "2024-02-27T16:15:12.345"
+  },
+  {
+    "id": "jkl89012-3456-7890-1234-jklm90123456",
+    "task": "Exercise for 30 minutes\nChest press",
+    "completed": true,
+    "createdAt": "2024-02-27T17:00:30.678",
+    "completedAt": "2024-02-27T17:00:30.678"
+  },
+  {
+    "id": "mno56789-0123-4567-89ab-234lk12ajsdf",
+    "task": "Update project documentation",
+    "completed": false,
+    "createdAt": "2024-02-27T18:45:54.321",
+    "updatedAt": "2024-02-27T18:45:54.321"
+  },
+  {
+    "id": "pqr23456-7890-1234-5678-pqrs78901234",
+    "task": "Buy groceries",
+    "completed": true,
+    "createdAt": "2024-02-27T16:30:21.654",
+    "completedAt": "2024-02-27T16:30:21.654"
+  },
+  {
+    "id": "ss3od12-3456-5290-1234-stuv90123456",
+    "task": "Call mom",
+    "completed": false,
+    "createdAt": "2024-02-26T21:15:42.987",
+    "updatedAt": "2024-02-26T21:15:42.987"
+  },
+  {
+    "id": "vwx56789-0123-4567-89ab-vwxy01234567",
+    "task": "Learn new coding language feature",
+    "completed": true,
+    "createdAt": "2024-02-25T22:00:15.321",
+    "completedAt": "2024-02-25T22:00:15.321"
+  },
+  {
+    "id": "yza23456-7890-1234-5678-yzab78901234",
+    "task": "Write blog post",
+    "completed": false,
+    "createdAt": "2024-02-25T22:45:33.654",
+    "updatedAt": "2024-02-25T22:45:33.654"
+  },
+  {
+    "id": "bcd89012-3456-7890-1234-bcde90123456",
+    "task": "Plan weekend activities\nCall Peter\nCall Angelika",
+    "completed": true,
+    "createdAt": "2024-02-25T23:30:09.876",
+    "completedAt": "2024-02-25T23:30:09.876"
+  },
+  {
+    "id": "efg56789-0123-4567-89ab-efgh01234567",
+    "task": "Review project code",
+    "completed": false,
+    "createdAt": "2024-02-24T00:15:27.109",
+    "updatedAt": "2024-02-24T00:15:27.109"
+  },
+  {
+    "id": "hij23456-7890-1234-5678-hijk78901234",
+    "task": "Attend webinar on AI",
+    "completed": true,
+    "createdAt": "2024-02-24T01:00:48.432",
+    "completedAt": "2024-02-24T01:00:48.432"
+  },
+  {
+    "id": "jkl9j5d2-7456-5821-1234-jklm9012aqo6",
+    "task": "Practice meditation",
+    "completed": false,
+    "createdAt": "2024-02-24T01:45:03.765",
+    "updatedAt": "2024-02-24T01:45:03.765"
+  },
+  {
+    "id": "mno56789-0123-4567-89ab-mnop01234567",
+    "task": "Organize desk",
+    "completed": true,
+    "createdAt": "2024-02-24T02:30:18.098",
+    "completedAt": "2024-02-24T02:30:18.098"
+  },
+  {
+    "id": "ods23456-3023-1234-9512-pqrs12309234",
+    "task": "Watch TED Talk",
+    "completed": false,
+    "createdAt": "2024-02-24T03:15:36.321",
+    "updatedAt": "2024-02-24T03:15:36.321"
+  },
+  {
+    "id": "stu89012-3456-7890-1234-stuv90123456",
+    "task": "Create project timeline",
+    "completed": true,
+    "createdAt": "2024-02-24T04:00:51.654",
+    "completedAt": "2024-02-24T04:00:51.654"
+  }
+]
+

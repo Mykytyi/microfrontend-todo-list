@@ -1,0 +1,19 @@
+.ListItem .TextAreaContainer .InputField {
+
+}
+
+.ListItem .TextAreaContainer .ExtraFuncContainer {
+  opacity: 0;
+}
+
+.ListItem:hover .TextAreaContainer .ExtraFuncContainer {
+  opacity: 1;
+}
+
+.ListItem:hover .TextAreaContainer .ExtraFuncContainer .IconContainer {
+  color: #ff3232;
+}
+
+.ListItem:hover .TextAreaContainer .ExtraFuncContainer .IconContainer {
+  color: #ff3232;
+}

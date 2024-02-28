@@ -1,30 +1,74 @@
-
-export type Message = {
-  type: 'error' | 'success' | 'info',
-  message: string,
+type LoadTasks = {
+  type: 'LOAD_TASKS',
 }
 
-type AddMessage = {
-  type: 'ADD_MESSAGE',
-  message: Message,
+type AddTask = {
+  type: 'ADD_TASK',
 }
 
-type RemoveMessage = {
-  type: 'REMOVE_MESSAGE',
+type RemoveTask = {
+  type: 'REMOVE_TASK',
+  id: string,
 }
 
-export type AppActions = AddMessage | RemoveMessage;
+type UpdateStatus = {
+  type: 'UPDATE_STATUS',
+  id: string,
+}
 
-export const addMessage = (message: Message): AddMessage => {
+
+type UpdateTask = {
+  type: 'UPDATE_TASK',
+  id: string,
+  task: string,
+}
+
+type UpdateTabsNumbers = {
+  type: 'UPDATE_TABS_NUMBERS',
+}
+
+export type AppActions = LoadTasks
+  | AddTask
+  | RemoveTask
+  | UpdateStatus
+  | UpdateTabsNumbers
+  | UpdateTask;
+
+export const loadTasks = (): LoadTasks => {
   return {
-    type: 'ADD_MESSAGE',
-    message,
+    type: 'LOAD_TASKS',
   }
 };
 
-export const removeMessage = (): RemoveMessage => {
+export const addTask = (): AddTask => {
   return {
-    type: 'REMOVE_MESSAGE',
+    type: 'ADD_TASK',
   }
 };
 
+export const removeTask = (id: string): RemoveTask => {
+  return {
+    type: 'REMOVE_TASK',
+    id,
+  }
+};
+
+export const updateStatus = (id: string): UpdateStatus => {
+  return {
+    type: 'UPDATE_STATUS',
+    id,
+  }
+};
+export const updateTask = (id: string, task: string): UpdateTask => {
+  return {
+    type: 'UPDATE_TASK',
+    id,
+    task,
+  }
+};
+
+export const updateTabsNumbers = (): UpdateTabsNumbers => {
+  return {
+    type: 'UPDATE_TABS_NUMBERS'
+  }
+};
